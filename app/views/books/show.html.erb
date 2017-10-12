@@ -1,18 +1,32 @@
-<h1>Books#show</h1>
-  <table>
+<div class= "container read-index">
+  <h1 class= "title">Book Entry</h1>
+  <table class="table table-striped">
     <thead>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Read</th>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Read Status</th>
+      </tr>
     </thead>
     <tbody>
-      <td><%= @book.title %></td>
-      <td><%= @book.author %></td>
-      <td><%= @book.read %></td>
-      <td><%= link_to 'Edit', edit_book_path(@book), method: :get%></td>
+      <tr>
+        <td><%= @book.title %></td>
+        <td><%= @book.author %></td>
+        <td><%= @book.read %></td>
+        <td><%= link_to 'Edit', edit_book_path(@book), method: :get %></td>
+      </tr>
     </tbody>
   </table>
-  <br>
-  <%= link_to 'Back to Index', books_path, method: :get %>
+    <%= link_to books_path, method: :get do %>
+    <button type="button" class="btn btn-info">Back to Reading List</button>
+    <% end %>
+</div>
+
+
+
+
+
+
+
 
 
