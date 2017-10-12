@@ -1,0 +1,16 @@
+<h1>Books#new</h1>
+
+    <%= form_for @book, url: books_path, method: :post do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+
+    <%= f.submit %>
+    <% end %>
+
+
+
+

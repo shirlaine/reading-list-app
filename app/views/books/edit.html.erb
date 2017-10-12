@@ -1,0 +1,13 @@
+<h1>Books#Edit</h1>
+
+<%= form_for @book, url: book_path(@book.id), method: :put do |f| %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :author %>
+<%= f.text_field :author %>
+
+<%= f.submit %>
+
+<% end %>
