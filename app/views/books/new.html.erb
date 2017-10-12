@@ -1,15 +1,19 @@
 <h1>Books#new</h1>
 
-    <%= form_for @book, url: books_path, method: :post do |f| %>
+  <%= form_for @book, url: books_path, method: :post do |f| %>
 
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
-    <%= f.label :author %>
-    <%= f.text_field :author %>
-
-    <%= f.submit %>
-    <% end %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.submit %>
+  <% end %>
+<br>
+  <% @book.errors.full_messages.each do |msg| %>
+  <%= msg %>
+<br>
+  <% end %>
 
 
 
