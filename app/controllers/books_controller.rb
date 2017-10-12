@@ -21,7 +21,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to books_path
     else
-      render new
+      render :new
     end
   end
 
@@ -30,7 +30,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to books_path
     else
-      render edit
+      render :edit
     end
   end
 
