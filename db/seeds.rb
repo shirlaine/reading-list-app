@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Puts seeds for books
+
+10.times do
+  Book.create(
+    title: Faker::GameOfThrones.city,
+    author: Faker::GameOfThrones.character
+    )
+end
