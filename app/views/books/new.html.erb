@@ -5,16 +5,19 @@
     <%= f.text_field :title %>
     <%= f.label :author %>
     <%= f.text_field :author %>
+
     <div class="space30">
       <%= f.submit class: 'btn btn-info' %>
-      <% end %>
       <%= link_to books_path, method: :get do %>
         <button type="button" class="btn btn-info">Back to Reading List</button>
       <% end %>
     </div>
+    <% end %>
     <br>
     <% @book.errors.full_messages.each do |msg| %>
     <%= msg %>
     <br>
     <% end %>
 </div>
+
+
