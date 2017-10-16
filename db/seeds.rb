@@ -10,7 +10,7 @@
 
 10.times do
   Book.create(
-    title: Faker::GameOfThrones.city,
-    author: Faker::GameOfThrones.character
+    title: Faker::Book.title,
+    author: Faker::Book.author
     )
 end
