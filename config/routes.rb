@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :books do
     put 'false', on: :member
     put 'true', on: :member
+    resources :bookmarks
   end
 end
