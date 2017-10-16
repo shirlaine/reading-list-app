@@ -1,0 +1,31 @@
+<div class= "container read-index">
+  <h1 class= "title">Bookmarks for Reading List</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Page Number</th>
+        <th>Description</th>
+        <th>Belongs to</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @book.bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= bookmark.page_number %></td>
+        <td><%= bookmark.description %></td>
+        <td><%= bookmark.book.title %></td>
+        <td><%= link_to 'Show', book_bookmark_path(@book, bookmark), method: :get %></td>
+        <td><%= link_to 'Edit', edit_book_bookmark_path(@book, bookmark), method: :get %></td>
+        <td><%= link_to 'Delete', book_bookmark_path(@book,bookmark.id), method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<p><%= link_to 'New', new_book_bookmark_path(@book), method: :get %></p>
+<p><%= link_to 'Back to Books list', books_path(@book), method: :get %></p>
+
+
+
+
+

@@ -1,0 +1,21 @@
+<div class= "container read-index">
+  <h1 class= "title">Book Entry for <%= @book.title %></h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Page Number</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @bookmark.page_number %></td>
+        <td><%= @bookmark.description %></td>
+        <td><%= link_to 'Edit', edit_book_path(@book), method: :get %></td>
+      </tr>
+    </tbody>
+  </table>
+    <%= link_to book_bookmarks_path(@book), method: :get do %>
+    <button type="button" class="btn btn-info">Back to Bookmarks List</button>
+    <% end %>
+</div>
