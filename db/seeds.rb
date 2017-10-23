@@ -14,3 +14,12 @@
     author: Faker::Book.author
     )
 end
+
+# Puts seeds for books
+  Bookmark.create(
+    page_number: Faker::Number.between(1, 500) #=> 7
+    description: Faker::HowIMetYourMother.quote
+    book_id: 5
+    )
+
+
