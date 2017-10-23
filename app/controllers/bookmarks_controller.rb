@@ -6,20 +6,17 @@ class BookmarksController < ApplicationController
     @bookmarks = @book.bookmarks.all
   end
 
-  def show
-    @bookmark = @book.bookmarks.find(params[:id])
-  end
-
   def new
     @bookmark = Bookmark.new
   end
 
   def create
+    @book = Book.find(params[:book_id])
     @bookmark = @book.bookmarks.new(bookmark_params)
     puts @bookmark.page_number
     puts @bookmark.description
     if @bookmark.save!
-      redirect_to book_bookmarks_path(@book), method: :post
+      redirect_to book_path(@book), method: :post
     else
       render :new
     end
@@ -32,7 +29,7 @@ class BookmarksController < ApplicationController
   def update
     @bookmark = @book.bookmarks.find(params[:id])
     if @bookmark.update(bookmark_params)
-      redirect_to book_bookmark_path(@book), method: :put
+      redirect_to book_path(@book), method: :put
     else
       render :edit
     end
@@ -41,7 +38,7 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark = @book.bookmarks.find(params[:id])
     @bookmark.destroy
-    redirect_to book_bookmarks_path(@book)
+    redirect_to book_path(@book)
   end
 
   private

@@ -1,29 +1,56 @@
 <div class= "container read-index">
-  <h1 class= "title">Book Entry</h1>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Read Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= @book.title %></td>
-        <td><%= @book.author %></td>
-        <td><%= @book.read %></td>
-        <td><%= link_to 'Edit', edit_book_path(@book), method: :get %></td>
-        <td><%= link_to 'Add bookmark', new_book_bookmark_path(@book, @book.bookmarks), method: :get %></td>
-      </tr>
-    </tbody>
-  </table>
-    <%= link_to books_path, method: :get do %>
-    <button type="button" class="btn btn-info">Back to Reading List</button>
-    <% end %>
+  <div class="row">
+    <div class = "col-md-12">
+      <h1 class= "title">Book Entry</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Read Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @book.title %></td>
+            <td><%= @book.author %></td>
+            <td><%= @book.read %></td>
+            <td><%= link_to 'Edit', edit_book_path(@book), method: :get %></td>
+          </tr>
+        </tbody>
+      </table>
+        <%= link_to books_path, method: :get do %>
+        <button type="button" class="btn btn-info">Back to Reading List</button>
+        <% end %>
+    </div>
+  </div>
+
+<br>
+<br>
+<div class="row">
+  <div class= "col-md-12">
+    <h1 class= "title">Bookmarks List</h1>
+      <table class="table table-striped">
+        <thead>
+          <th>Page number</th>
+          <th>Description</th>
+        </thead>
+        <% @book.bookmarks.each do |bookmark| %>
+        <tbody>
+          <td><%= bookmark.page_number %></td>
+          <td><%= bookmark.description %></td>
+          <td><%= link_to 'Edit', edit_book_bookmark_path(@book, bookmark), method: :get %></td>
+          <td><%= link_to 'Delete', book_bookmark_path(@book, bookmark), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tbody>
+          <% end %>
+      </table>
+      <%= link_to new_book_bookmark_path(@book, @book.bookmarks), method: :get do %>
+      <button type="button" class="btn btn-info">Create New Bookmark</button>
+        <% end %>
+  </div>
 </div>
 
-
+</div>
 
 
 
