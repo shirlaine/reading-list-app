@@ -36,6 +36,8 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
 # Faker Gem
 gem 'faker', '~> 1.8', '>= 1.8.4'
+# Devise for authentication
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

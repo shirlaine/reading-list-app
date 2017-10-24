@@ -1,4 +1,4 @@
-class BookmarksController < ApplicationController
+class BookmarksController < BaseController
 
   before_action :prepare_book
 
