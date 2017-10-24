@@ -1,7 +1,7 @@
-class BooksController < ApplicationController
+class BooksController < BaseController
 
   def index
-    @books = Book.order(:id)
+    @books = current_user.books
   end
 
   def show
@@ -17,7 +17,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.new(book_params)
     if @book.save
       flash[:notice] = "Your entry has been saved!"
       redirect_to books_path
