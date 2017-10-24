@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Book, type: :model do
 
-
+  let(:subject) { create(:book) }
 
   describe 'validations' do
     it { expect(subject).to validate_presence_of(:title) }
