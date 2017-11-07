@@ -38,7 +38,10 @@ class BookmarksController < BaseController
   def destroy
     @bookmark = @book.bookmarks.find(params[:id])
     @bookmark.destroy
-    redirect_to book_path(@book)
+    respond_to do |format|
+      format.html { redirect_to book_path(@book) }
+      format.js
+    end
   end
 
   private
