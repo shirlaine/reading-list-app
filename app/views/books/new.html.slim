@@ -1,3 +1,21 @@
+.container.read-index
+
+  h1.title New Book Entry
+
+  = form_for @book, url: books_path, method: :post do |f|
+
+    = f.label :title
+    = f.text_field :title
+
+    = f.label :author
+    = f.text_field :author
+
+    .space30
+      = f.submit class: 'btn btn-info'
+      = link_to 'Back to Reading List', books_path, method: :get, class: 'btn btn-info'
+
+
+
 <div class= "container read-index">
   <h1 class= "title">New Book Entry</h1>
     <%= form_for @book, url: books_path, method: :post do |f| %>
