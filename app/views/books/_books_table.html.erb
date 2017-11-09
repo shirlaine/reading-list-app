@@ -12,6 +12,7 @@
         <td><%= book.title %></td>
         <td><%= book.author %></td>
         <td><%= book.read %></td>
+        <td><%= filestack_image book.images, transform: filestack_transform.resize(width:100, height:100) %>
         <td><%= link_to 'Complete', true_book_path(book), method: :put %></td>
         <td><%= link_to 'In Progress', false_book_path(book), method: :put %></td>
         <td><%= link_to 'Show', book_path(book), method: :get %></td>

@@ -60,7 +60,7 @@ class BooksController < BaseController
 private
 
   def book_params
-    params.require(:book).permit(:title,:author)
+    params.require(:book).permit(:title,:author, :images)
   end
 
 end
