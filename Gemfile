@@ -38,6 +38,8 @@ gem 'jquery-rails'
 gem 'faker', '~> 1.8', '>= 1.8.4'
 # Devise for authentication
 gem 'devise'
+# Slim-Rails
+gem 'slim-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
