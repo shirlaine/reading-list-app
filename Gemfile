@@ -40,6 +40,7 @@ gem 'faker', '~> 1.8', '>= 1.8.4'
 gem 'devise'
 # Slim-Rails
 gem 'slim-rails'
+gem 'filestack-rails', '~> 3.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,7 +52,6 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'factory_bot_rails', "~> 4.0"
   gem 'dotenv-rails'
-  gem 'filestack-rails', '~> 3.1.0'
 end
 
 group :development do
