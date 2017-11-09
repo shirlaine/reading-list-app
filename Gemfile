@@ -51,6 +51,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'factory_bot_rails', "~> 4.0"
   gem 'dotenv-rails'
+  gem 'filestack-rails', '~> 3.1.0'
 end
 
 group :development do
